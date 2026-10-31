@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Secrets and local config
+.env
+
+# Data (download it with scripts/download_data.py)
+data/raw/*
+!data/raw/.gitkeep
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# NOTE: artifacts/model.joblib and artifacts/model_meta.json are tracked ON PURPOSE
+# so the Docker image and cloud deploy can use them. Check the file size
+# (GitHub rejects files over 100 MB) before committing.

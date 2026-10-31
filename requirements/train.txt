@@ -1,0 +1,4 @@
+-r api.txt
+matplotlib==3.10.8
+ucimlrepo==0.0.7
+openpyxl==3.1.5

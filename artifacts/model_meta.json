@@ -1,0 +1,345 @@
+{
+  "project_version": "0.1.0",
+  "trained_at_utc": "2026-10-31T09:06:34+00:00",
+  "trained_on_synthetic_data": false,
+  "selected_model": "hist_gradient_boosting",
+  "tuned_params": {},
+  "preprocessing": {},
+  "input_columns": [
+    "LIMIT_BAL",
+    "EDUCATION",
+    "PAY_1",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6"
+  ],
+  "audit_only_columns": [
+    "SEX",
+    "AGE",
+    "MARRIAGE"
+  ],
+  "threshold": 0.15,
+  "cost_assumptions": {
+    "false_negative": 5.0,
+    "false_positive": 1.0
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "n_train": 24000,
+    "n_test": 6000
+  },
+  "cv_comparison": [
+    {
+      "model": "hist_gradient_boosting",
+      "cv_roc_auc_mean": 0.78596,
+      "cv_roc_auc_std": 0.00445,
+      "cv_pr_auc_mean": 0.56229,
+      "cv_pr_auc_std": 0.00773
+    },
+    {
+      "model": "random_forest",
+      "cv_roc_auc_mean": 0.78596,
+      "cv_roc_auc_std": 0.00479,
+      "cv_pr_auc_mean": 0.55865,
+      "cv_pr_auc_std": 0.007
+    },
+    {
+      "model": "logistic_regression_pay_onehot",
+      "cv_roc_auc_mean": 0.77122,
+      "cv_roc_auc_std": 0.00516,
+      "cv_pr_auc_mean": 0.54288,
+      "cv_pr_auc_std": 0.01336
+    },
+    {
+      "model": "logistic_regression",
+      "cv_roc_auc_mean": 0.75715,
+      "cv_roc_auc_std": 0.00727,
+      "cv_pr_auc_mean": 0.51013,
+      "cv_pr_auc_std": 0.01624
+    },
+    {
+      "model": "baseline_prior",
+      "cv_roc_auc_mean": 0.5,
+      "cv_roc_auc_std": 0.0,
+      "cv_pr_auc_mean": 0.22121,
+      "cv_pr_auc_std": 8e-05
+    }
+  ],
+  "test_metrics": {
+    "roc_auc": 0.7811324850175076,
+    "pr_auc": 0.560030761526657,
+    "brier": 0.13450552372644425,
+    "base_rate": 0.22116666666666668,
+    "threshold": 0.15,
+    "precision": 0.35296119809394144,
+    "recall": 0.7814619442351168,
+    "flag_rate": 0.48966666666666664,
+    "tp": 1037,
+    "fp": 1901,
+    "fn": 290,
+    "tn": 2772,
+    "expected_cost_per_customer": 0.5585,
+    "cost_if_nobody_flagged": 1.1058333333333332
+  },
+  "base_rate": 0.22120833333333334,
+  "operating_points": [
+    {
+      "id": "capacity_10",
+      "kind": "capacity",
+      "label": "Review top 10%",
+      "cost_ratio": null,
+      "threshold": 0.5716372274915941,
+      "test_flag_rate": 0.10333333333333333,
+      "test_recall": 0.3255463451394122,
+      "test_precision": 0.6967741935483871,
+      "is_default": false
+    },
+    {
+      "id": "cost_2",
+      "kind": "cost_ratio",
+      "label": "Cost ratio 2:1",
+      "cost_ratio": 2.0,
+      "threshold": 0.35000000000000003,
+      "test_flag_rate": 0.18716666666666668,
+      "test_recall": 0.4883195177091183,
+      "test_precision": 0.5770258236865539,
+      "is_default": false
+    },
+    {
+      "id": "capacity_20",
+      "kind": "capacity",
+      "label": "Review top 20%",
+      "cost_ratio": null,
+      "threshold": 0.3346895297978803,
+      "test_flag_rate": 0.1955,
+      "test_recall": 0.4996232102486812,
+      "test_precision": 0.5652173913043478,
+      "is_default": false
+    },
+    {
+      "id": "cost_3",
+      "kind": "cost_ratio",
+      "label": "Cost ratio 3:1",
+      "cost_ratio": 3.0,
+      "threshold": 0.25,
+      "test_flag_rate": 0.2623333333333333,
+      "test_recall": 0.5900527505651846,
+      "test_precision": 0.4974587039390089,
+      "is_default": false
+    },
+    {
+      "id": "capacity_30",
+      "kind": "capacity",
+      "label": "Review top 30%",
+      "cost_ratio": null,
+      "threshold": 0.22608934779897671,
+      "test_flag_rate": 0.2946666666666667,
+      "test_recall": 0.6201959306706858,
+      "test_precision": 0.4654977375565611,
+      "is_default": false
+    },
+    {
+      "id": "cost_5",
+      "kind": "cost_ratio",
+      "label": "Cost ratio 5:1",
+      "cost_ratio": 5.0,
+      "threshold": 0.15,
+      "test_flag_rate": 0.48966666666666664,
+      "test_recall": 0.7814619442351168,
+      "test_precision": 0.35296119809394144,
+      "is_default": true
+    },
+    {
+      "id": "cost_10",
+      "kind": "cost_ratio",
+      "label": "Cost ratio 10:1",
+      "cost_ratio": 10.0,
+      "threshold": 0.08,
+      "test_flag_rate": 0.7933333333333333,
+      "test_recall": 0.9495101733232856,
+      "test_precision": 0.2647058823529412,
+      "is_default": false
+    }
+  ],
+  "calibration": [
+    {
+      "mean_predicted": 0.04892971009107867,
+      "fraction_positive": 0.041666666666666664
+    },
+    {
+      "mean_predicted": 0.06872941671856045,
+      "fraction_positive": 0.065
+    },
+    {
+      "mean_predicted": 0.08947253235995052,
+      "fraction_positive": 0.07833333333333334
+    },
+    {
+      "mean_predicted": 0.11254083638723157,
+      "fraction_positive": 0.11666666666666667
+    },
+    {
+      "mean_predicted": 0.13511543765968587,
+      "fraction_positive": 0.16333333333333333
+    },
+    {
+      "mean_predicted": 0.15974896846135414,
+      "fraction_positive": 0.18166666666666667
+    },
+    {
+      "mean_predicted": 0.1929147074395043,
+      "fraction_positive": 0.18666666666666668
+    },
+    {
+      "mean_predicted": 0.2669790873025669,
+      "fraction_positive": 0.255
+    },
+    {
+      "mean_predicted": 0.42558734166949874,
+      "fraction_positive": 0.42
+    },
+    {
+      "mean_predicted": 0.7154024549744404,
+      "fraction_positive": 0.7033333333333334
+    }
+  ],
+  "fairness_audit": {
+    "SEX": [
+      {
+        "group": "female",
+        "n": 3598,
+        "base_rate": 0.21289605336297943,
+        "flag_rate": 0.4733185102834908,
+        "recall": 0.7754569190600522,
+        "false_positive_rate": 0.3915960451977401,
+        "precision": 0.34879624192601294
+      },
+      {
+        "group": "male",
+        "n": 2402,
+        "base_rate": 0.23355537052456288,
+        "flag_rate": 0.5141548709408826,
+        "recall": 0.7896613190730838,
+        "false_positive_rate": 0.43020097772949484,
+        "precision": 0.35870445344129553
+      }
+    ],
+    "AGE_BAND": [
+      {
+        "group": "30-39",
+        "n": 2198,
+        "base_rate": 0.20609645131938126,
+        "flag_rate": 0.454049135577798,
+        "recall": 0.7593818984547461,
+        "false_positive_rate": 0.37478510028653295,
+        "precision": 0.34468937875751504
+      },
+      {
+        "group": "40-49",
+        "n": 1341,
+        "base_rate": 0.232662192393736,
+        "flag_rate": 0.4862043251304996,
+        "recall": 0.7788461538461539,
+        "false_positive_rate": 0.3974732750242954,
+        "precision": 0.3726993865030675
+      },
+      {
+        "group": "50+",
+        "n": 549,
+        "base_rate": 0.2459016393442623,
+        "flag_rate": 0.5227686703096539,
+        "recall": 0.7777777777777778,
+        "false_positive_rate": 0.4396135265700483,
+        "precision": 0.36585365853658536
+      },
+      {
+        "group": "<30",
+        "n": 1912,
+        "base_rate": 0.223326359832636,
+        "flag_rate": 0.5235355648535565,
+        "recall": 0.8079625292740047,
+        "false_positive_rate": 0.4417508417508417,
+        "precision": 0.34465534465534464
+      }
+    ],
+    "MARRIAGE": [
+      {
+        "group": "married",
+        "n": 2767,
+        "base_rate": 0.24141669678352007,
+        "flag_rate": 0.4792193711601012,
+        "recall": 0.7829341317365269,
+        "false_positive_rate": 0.3825631252977608,
+        "precision": 0.39441930618401205
+      },
+      {
+        "group": "others",
+        "n": 68,
+        "base_rate": 0.17647058823529413,
+        "flag_rate": 0.5441176470588235,
+        "recall": 0.75,
+        "false_positive_rate": 0.5,
+        "precision": 0.24324324324324326
+      },
+      {
+        "group": "single",
+        "n": 3158,
+        "base_rate": 0.20487650411652944,
+        "flag_rate": 0.49715009499683344,
+        "recall": 0.7805255023183926,
+        "false_positive_rate": 0.4241338112305854,
+        "precision": 0.321656050955414
+      },
+      {
+        "group": "undocumented",
+        "n": 7,
+        "base_rate": 0.0,
+        "flag_rate": 0.7142857142857143,
+        "recall": null,
+        "false_positive_rate": 0.7142857142857143,
+        "precision": 0.0
+      }
+    ]
+  },
+  "permutation_importance": {
+    "PAY_1": 0.08097102903675853,
+    "BILL_AMT1": 0.02218073297338501,
+    "LIMIT_BAL": 0.019976436328498947,
+    "PAY_2": 0.013330052179696229,
+    "PAY_3": 0.009542367761956138,
+    "PAY_4": 0.007342247814934089,
+    "PAY_5": 0.007064553848843369,
+    "PAY_6": 0.0062829791821446875,
+    "PAY_AMT2": 0.003961380219642918,
+    "PAY_AMT3": 0.003041426231049571,
+    "PAY_AMT1": 0.0027353339447332868,
+    "BILL_AMT2": 0.002121020707552135,
+    "BILL_AMT6": 0.0018766274406470719,
+    "BILL_AMT3": 0.001804672128411533,
+    "EDUCATION": 0.0017594380067573966,
+    "PAY_AMT4": 0.001612382764203346,
+    "PAY_AMT6": 0.0016117860930799255,
+    "BILL_AMT4": 0.0015901769226640105,
+    "BILL_AMT5": 0.0014924034896554473,
+    "PAY_AMT5": 0.0005427933336034085
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scikit_learn": "1.8.0"
+  }
+}

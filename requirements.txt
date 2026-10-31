@@ -1,0 +1,2 @@
+# Everything needed for local development (training, API, UI, tests, notebooks)
+-r requirements/dev.txt
